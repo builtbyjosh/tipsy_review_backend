@@ -5,7 +5,7 @@ class BreweriesController < ApplicationController
   end
 
   def show
-    brewery = Brewery.find_by(params[:id])
+    brewery = Brewery.find_by(id: params[:id])
     render json: brewery.to_json(:include => [:reviews])
   end
 end
